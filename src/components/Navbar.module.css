@@ -27,8 +27,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  position: relative;
+max-width: 100% !important;
+  padding: 0 40px !important;
 }
 
 .logo {
@@ -125,6 +125,10 @@
   display: none;
   font-size: 1.5rem;
   color: inherit;
+}
+
+.mobileMenu {
+  display: none;
 }
 
 @media (max-width: 992px) {
