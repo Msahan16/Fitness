@@ -56,27 +56,26 @@ const Contact = () => {
             </p>
 
             <div className={styles.infoCards}>
-              <div className={styles.infoCard}>
-                <div className={styles.iconWrapper}><MapPin size={24} /></div>
-                <div>
-                  <h4>Visit Us</h4>
-                  <p>123 Fitness Street, New York, NY 10001</p>
-                </div>
-              </div>
-              <div className={styles.infoCard}>
-                <div className={styles.iconWrapper}><Phone size={24} /></div>
-                <div>
-                  <h4>Call Us</h4>
-                  <p>+1 (555) 000-1111</p>
-                </div>
-              </div>
-              <div className={styles.infoCard}>
-                <div className={styles.iconWrapper}><Mail size={24} /></div>
-                <div>
-                  <h4>Email Us</h4>
-                  <p>info@fitnessgym.com</p>
-                </div>
-              </div>
+              {[
+                { icon: <MapPin size={24} />, title: "Visit Us", content: "123 Fitness Street, New York, NY 10001" },
+                { icon: <Phone size={24} />, title: "Call Us", content: "+1 (555) 000-1111" },
+                { icon: <Mail size={24} />, title: "Email Us", content: "info@fitnessgym.com" }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className={styles.infoCard}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className={styles.iconWrapper}>{item.icon}</div>
+                  <div>
+                    <h4>{item.title}</h4>
+                    <p>{item.content}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -123,15 +122,17 @@ const Contact = () => {
                 {errors.message && <span className={styles.error}>{errors.message.message}</span>}
               </div>
 
-              <button 
+              <motion.button 
                 type="submit" 
                 disabled={isSubmitting}
                 className={`${styles.submitBtn} btn btn-primary`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {isSubmitting ? "Sending..." : (
                   <>Send Message <Send size={18} /></>
                 )}
-              </button>
+              </motion.button>
             </form>
           </motion.div>
         </div>
