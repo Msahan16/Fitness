@@ -17,7 +17,7 @@
 
 .scrolled .mainNav {
   background: var(--background);
-  padding: 10px 0;
+  padding: 5px 0;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
   color: var(--foreground);
@@ -34,6 +34,17 @@
 .logo {
   display: flex;
   align-items: center;
+  transition: var(--transition);
+}
+
+.logo img {
+  width: auto !important;
+  height: 60px !important;
+  transition: var(--transition);
+}
+
+.scrolled .logo img {
+  height: 45px !important;
 }
 
 .rightSection {
@@ -59,6 +70,8 @@
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--foreground);
+  width: 36px;
+  height: 36px;
 }
 
 .themeToggle:hover {
@@ -96,6 +109,12 @@
   font-weight: 600;
   font-size: 0.85rem;
   white-space: nowrap;
+  transition: var(--transition);
+}
+
+.scrolled .cta {
+  padding: 6px 14px;
+  font-size: 0.8rem;
 }
 
 .cta:hover {
