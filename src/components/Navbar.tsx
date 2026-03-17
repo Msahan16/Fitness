@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className={styles.mainNav}>
         <div className={`container ${styles.navContainer}`}>
           <Link href="/" className={styles.logo}>
-            <Image src="/logo.png" alt="Fitness Gym Logo" width={80} height={80} priority />
+            <Image src="/logo.png" alt="Fitness Gym Logo" width={120} height={120} priority />
           </Link>
 
           <ul className={styles.navLinks}>
