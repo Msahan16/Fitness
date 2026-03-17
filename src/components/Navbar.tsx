@@ -69,14 +69,41 @@ const Navbar = () => {
             <Link href="#contact" className={styles.cta}>
               Join Now
             </Link>
+            
+            <button 
+              className={styles.mobileMenuBtn}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
 
-          <button 
-            className={styles.mobileMenuBtn}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          {/* Mobile Menu Dropdown */}
+          <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuVisible : ""}`}>
+            <ul className={styles.mobileNavLinks}>
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className={styles.mobileNavLink}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link 
+                  href="#contact" 
+                  className={`${styles.cta} ${styles.mobileCta}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Join Now
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

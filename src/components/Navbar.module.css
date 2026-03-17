@@ -27,8 +27,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-   max-width: 100% !important;
-  padding: 0 40px !important;}
+  margin: 0 auto;
+  position: relative;
+}
 
 .logo {
   display: flex;
@@ -126,12 +127,98 @@
   color: inherit;
 }
 
+@media (max-width: 992px) {
+  .logo img {
+    height: 60px !important;
+  }
+  .scrolled .logo img {
+    height: 40px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
   }
+
+  .navContainer {
+    padding: 0 20px !important;
+  }
   
   .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    z-index: 1001;
+  }
+
+  .rightSection {
+    gap: 12px;
+  }
+
+  /* Desktop CTA hidden on mobile if wanted, or kept small */
+  .cta {
+    display: none;
+  }
+
+  .scrolled .cta {
+    display: none;
+  }
+
+  /* Mobile Menu Dropdown Styles */
+  .mobileMenu {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    width: 200px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: block;
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .mobileMenuVisible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .mobileNavLink {
+    display: block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--foreground);
+    transition: var(--transition);
+  }
+
+  .mobileNavLink:hover {
+    background: var(--surface-hover);
+    color: var(--primary);
+  }
+
+  .mobileCta {
+    display: block !important;
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }
