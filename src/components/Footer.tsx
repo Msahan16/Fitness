@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.footerAbout}>
           <div className={styles.footerLogo}>
-            <Image src="/logo.png" alt="Fitness Gym Logo" width={60} height={60} />
+            <Image src="/logo.png" alt="Fitness Gym Logo" width={120} height={120} />
           </div>
           <p>
             The best fitness center in the city, providing top-class gym facilities 
