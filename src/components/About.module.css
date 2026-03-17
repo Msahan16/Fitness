@@ -76,12 +76,20 @@
 @media (max-width: 992px) {
   .aboutGrid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
+    text-align: center;
   }
   
+  .features {
+    justify-content: center;
+  }
+
   .experience {
+    position: relative;
     bottom: 20px;
-    right: 20px;
+    right: 0;
+    margin: 0 auto;
+    display: inline-block;
     padding: 20px;
   }
 }
