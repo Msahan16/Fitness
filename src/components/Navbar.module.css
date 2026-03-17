@@ -12,6 +12,7 @@
   transition: var(--transition);
   background: transparent;
   border-bottom: 1px solid transparent;
+  color: #FFFFFF; /* High contrast for hero */
 }
 
 .scrolled .mainNav {
@@ -19,6 +20,7 @@
   padding: 10px 0;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
+  color: var(--foreground);
 }
 
 .navContainer {
@@ -41,16 +43,22 @@
 }
 
 .themeToggle {
-  color: var(--foreground);
+  color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.scrolled .themeToggle {
   background: var(--surface);
   border: 1px solid var(--border);
-  transition: var(--transition);
+  color: var(--foreground);
 }
 
 .themeToggle:hover {
@@ -69,9 +77,9 @@
 
 .navLink {
   font-weight: 400;
-  color: var(--foreground);
+  color: inherit;
   font-size: 0.9rem;
-  opacity: 0.9;
+  opacity: 0.85;
   white-space: nowrap;
 }
 
@@ -97,7 +105,7 @@
 .mobileMenuBtn {
   display: none;
   font-size: 1.5rem;
-  color: var(--foreground);
+  color: inherit;
 }
 
 @media (max-width: 768px) {
