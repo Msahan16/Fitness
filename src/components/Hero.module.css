@@ -4,7 +4,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero-bg.png');
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('/hero-bg.png');
   background-size: cover;
   background-position: center;
 }
@@ -34,6 +34,7 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 24px;
+  color: #FFFFFF;
 }
 
 .title span {
@@ -42,7 +43,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
   max-width: 600px;
 }
@@ -67,7 +68,7 @@
 }
 
 .statItem p {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 1px;
