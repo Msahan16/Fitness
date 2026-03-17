@@ -31,33 +31,33 @@ const Trainers = () => {
           Meet Our <span>Expert</span> Trainers
         </h2>
         
-        <div className={styles.grid}>
-          {trainers.map((trainer, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={styles.card}
-            >
-              <Image 
-                src={trainer.image} 
-                alt={trainer.name} 
-                fill 
-                className={styles.image}
-              />
-              <div className={styles.info}>
-                <h3>{trainer.name}</h3>
-                <p>{trainer.role}</p>
-                <div className={styles.socials}>
-                  <a href="#" className={styles.socialIcon}><Instagram size={18} /></a>
-                  <a href="#" className={styles.socialIcon}><Twitter size={18} /></a>
-                  <a href="#" className={styles.socialIcon}><Facebook size={18} /></a>
+        <div className={styles.carouselContainer}>
+          <div className={styles.track}>
+            {[...trainers, ...trainers].map((trainer, index) => (
+              <motion.div 
+                key={index}
+                className={styles.card}
+                whileHover={{ y: -20, rotateY: 10, rotateX: 5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Image 
+                  src={trainer.image} 
+                  alt={trainer.name} 
+                  fill 
+                  className={styles.image}
+                />
+                <div className={styles.info}>
+                  <h3>{trainer.name}</h3>
+                  <p>{trainer.role}</p>
+                  <div className={styles.socials}>
+                    <a href="#" className={styles.socialIcon}><Instagram size={18} /></a>
+                    <a href="#" className={styles.socialIcon}><Twitter size={18} /></a>
+                    <a href="#" className={styles.socialIcon}><Facebook size={18} /></a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
