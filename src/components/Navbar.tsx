@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Dumbbell, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -29,8 +30,7 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.navContainer}`}>
         <Link href="/" className={styles.logo}>
-          <Dumbbell size={32} color="var(--primary)" />
-          <span>FITNESS</span>GYM
+          <Image src="/logo.png" alt="Fitness Gym Logo" width={50} height={50} priority />
         </Link>
 
         <ul className={styles.navLinks}>

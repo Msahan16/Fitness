@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Dumbbell, Instagram, Twitter, Facebook, Youtube, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Instagram, Twitter, Facebook, Youtube, ChevronRight } from "lucide-react";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -10,8 +11,7 @@ const Footer = () => {
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.footerAbout}>
           <div className={styles.footerLogo}>
-            <Dumbbell size={32} color="var(--primary)" />
-            <span>FITNESS</span>GYM
+            <Image src="/logo.png" alt="Fitness Gym Logo" width={60} height={60} />
           </div>
           <p>
             The best fitness center in the city, providing top-class gym facilities 
