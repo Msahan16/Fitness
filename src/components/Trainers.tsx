@@ -20,6 +20,16 @@ const trainers = [
     name: "Mike Tyson",
     role: "Boxing & HIIT Trainer",
     image: "/trainer-3.png"
+  },
+  {
+    name: "Sarah Connor",
+    role: "Strength & Conditioning",
+    image: "/trainer-4.png"
+  },
+  {
+    name: "David Miller",
+    role: "Crossfit Expert",
+    image: "/trainer-5.png"
   }
 ];
 
