@@ -14,8 +14,11 @@
 }
 
 .imageMain {
+  width: 100%;
+  height: auto;
   border-radius: var(--border-radius);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
 .experience {
@@ -41,13 +44,13 @@
   text-transform: uppercase;
 }
 
-.content h2 {
+.title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 24px;
 }
 
-.content h2 span {
+.title span {
   color: var(--primary);
 }
 
@@ -80,16 +83,25 @@
     text-align: center;
   }
   
+  .imageMain {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
   .features {
     justify-content: center;
+    text-align: left;
+    display: inline-grid;
   }
 
   .experience {
     position: relative;
-    bottom: 20px;
+    top: -20px;
     right: 0;
     margin: 0 auto;
     display: inline-block;
     padding: 20px;
+    z-index: 5;
   }
 }
