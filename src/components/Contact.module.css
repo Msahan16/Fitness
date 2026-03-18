@@ -158,6 +158,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .contact {
+    padding-top: 30px;
+  }
+}
+
 @media (max-width: 600px) {
   .formWrapper {
     padding: 30px 20px;
