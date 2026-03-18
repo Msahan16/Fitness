@@ -15,7 +15,7 @@ const Hero = () => {
         >
           <span className={styles.badge}>Est. 2023 - Premium Fitness</span>
           <h1 className={styles.title}>
-            Transform Your <span>Body</span>,<br />
+            Transform Your <span>Body</span><br />
             Transform Your <span>Life</span>
           </h1>
           <p className={styles.subtitle}>
@@ -24,11 +24,8 @@ const Hero = () => {
           </p>
 
           <div className={styles.actions}>
-            <button className="btn btn-primary">
+            <button className={`${styles.getStartedBtn} btn btn-primary`}>
               Get Started <ArrowRight size={20} />
-            </button>
-            <button className={`${styles.playBtn} btn-outline btn`}>
-              <Play size={20} fill="currentColor" /> Watch Video
             </button>
           </div>
 

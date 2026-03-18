@@ -25,11 +25,37 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const playThemeSound = (isLight: boolean) => {
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+
+      oscillator.type = 'sine';
+      // Higher pitch for light mode (sun/bright), lower for dark mode (calm/moon)
+      const freq = isLight ? 880 : 440; 
+      oscillator.frequency.setValueAtTime(freq, audioContext.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(freq / 2, audioContext.currentTime + 0.1);
+
+      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.1);
+    } catch (e) {
+      console.error("Audio context failed", e);
+    }
+  };
+
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
+    playThemeSound(newTheme === "light");
   };
 
   const navLinks = [
