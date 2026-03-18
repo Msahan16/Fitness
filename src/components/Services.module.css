@@ -56,6 +56,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .services {
+    padding-bottom: 40px;
+  }
+}
+
 @media (max-width: 600px) {
   .cards {
     grid-template-columns: 1fr;
